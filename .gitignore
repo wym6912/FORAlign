@@ -1,0 +1,12 @@
+.vs/
+x64/
+.vscode/
+*.o
+*.a
+wfa-test/bin
+wfa-test/build
+wfa2-test/bin
+wfa2-test/build
+bin/
+lib/
+*.aps

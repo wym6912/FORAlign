@@ -1,0 +1,12 @@
+[submodule "include/kseq"]
+	path = include/kseq
+	url = git@github.com:wym6912/kseq.git
+[submodule "include/boost"]
+	path = include/boost
+	url = git@github.com:wym6912/boost_cpp_int.git
+[submodule "include/getopt"]
+	path = include/getopt9
+	url = git@github.com:wym6912/getopt9.git
+[submodule "include/include/threadpool"]
+	path = include/threadpool
+	url = git@github.com:wym6912/staccato.git
