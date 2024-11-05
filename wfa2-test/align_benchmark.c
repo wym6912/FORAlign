@@ -445,6 +445,30 @@ void align_benchmark_run_algorithm(
     case alignment_gap_affine2p_wavefront:
       benchmark_gap_affine2p_wavefront(align_input,&parameters.affine2p_penalties);
       break;
+    case alignment_hirschberg:
+    {
+      cigar_t* const cigar = cigar_new(align_input->pattern_length+align_input->text_length);
+      // Align
+      timer_start(&align_input->timer);
+      hirschberg_single_cigar(align_input->pattern, align_input->text, align_input->pattern_length, align_input->text_length,
+                       parameters.affine_penalties.gap_opening, parameters.affine_penalties.gap_extension,
+                       parameters.affine_penalties.match, parameters.affine_penalties.mismatch,
+                       DNA, cigar->operations, &(cigar->end_offset));
+      cigar->begin_offset = 0;
+      timer_stop(&align_input->timer);
+      // DEBUG
+      if (align_input->debug_flags) {
+          benchmark_check_alignment(align_input,cigar);
+      }
+      // Output
+      if (align_input->output_file) {
+          benchmark_print_output(align_input,gap_affine,false,cigar);
+      }
+      // Free
+      cigar_free(cigar);
+    }
+      break;
+
     case alignment_hirschberg_multi:
     {
       cigar_t* const cigar = cigar_new(align_input->pattern_length+align_input->text_length);

@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="foralign\dp.cpp" />
     <ClCompile Include="foralign\hirschberg.cpp" />
+    <ClCompile Include="foralign\hirschberg_single.cpp" />
     <ClCompile Include="foralign\mtdp.cpp" />
     <ClCompile Include="foralign\mtset.cpp" />
     <ClCompile Include="foralign\mtxutl.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="foralign\dp.hpp" />
     <ClInclude Include="foralign\hirschberg.h" />
     <ClInclude Include="foralign\hirschberg.hpp" />
+    <ClInclude Include="foralign\hirschberg_single.hpp" />
     <ClInclude Include="foralign\mtdp.hpp" />
     <ClInclude Include="foralign\mtmap.hpp" />
     <ClInclude Include="foralign\mtset.hpp" />

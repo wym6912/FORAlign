@@ -36,6 +36,9 @@
     <ClCompile Include="foralign\russians.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="foralign\hirschberg_single.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="foralign\hirschberg.hpp">
@@ -70,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="foralign\resource_libforalign.h">
       <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="foralign\hirschberg_single.hpp">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -30,7 +30,7 @@ THREADS = 1
 ##
 
 
-LIBOBJ_MAIN = dp.o hirschberg.o mtset.o mtxutl.o seqio.o russians.o mtdp.o
+LIBOBJ_MAIN = hirschberg_single.o dp.o hirschberg.o mtset.o mtxutl.o seqio.o russians.o mtdp.o
 
 TARGETS = libforalign.a
 ##

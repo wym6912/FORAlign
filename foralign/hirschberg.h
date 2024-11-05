@@ -21,7 +21,7 @@ extern "C"
 #endif
 
 #ifndef DP_LONG_LEN
-#define DP_LONG_LEN 0
+#define DP_LONG_LEN 1
 #endif
 
 #if DP_LONG_LEN == 2
@@ -39,6 +39,7 @@ DLL void read_2_seqs(char *c_input, char **seq1, char **name1, char **seq2, char
 DLL void print_seqs_to_file(char *seq1, char *comment1, char *seq2, char *comment2, char* c_output);
 DLL void hirschberg_API(char *seq1, char *seq2, int len1, int len2, dp_t O, dp_t E, dp_t M, dp_t X, int table_size, sequence_t type_, int threads, char **out_seq1, char **out_seq2, short simple_dp, short multidp, int dp_threads);
 DLL void hirschberg_cigar(char* seq1, char* seq2, int len1, int len2, dp_t O, dp_t E, dp_t M, dp_t X, int table_size, sequence_t type_, int threads, char* out_cigar, int *cigar_end, short simple_dp, short multidp, int dp_threads);
+DLL void hirschberg_single_cigar(char *seq1, char *seq2, int len1, int len2, dp_t O, dp_t E, dp_t M, dp_t X, sequence_t type_, char* out_cigar, int* cigar_end);
 #ifdef __cplusplus
 }
 #endif

@@ -59,6 +59,7 @@ typedef enum {
   alignment_gap_affine2p_dp,
   alignment_gap_affine2p_wavefront,
   // hirschberg
+  alignment_hirschberg,
   alignment_hirschberg_multi,
   // russians
   alignment_russians,

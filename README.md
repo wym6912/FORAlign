@@ -25,6 +25,7 @@ USE: ./align_benchmark -a ALGORITHM -i PATH
               gap-affine-swg
               gap-affine-swg-banded
               gap-affine-wfa
+              gap-affine-hirschberg
               gap-affine-hirschberg-multi
               gap-affine-russians-multi
             [Gap-affine-2pieces (Concave 2-pieces)]
@@ -123,16 +124,17 @@ The tests in our paper is shown as follows:
 
 |Test method Name|Test Command<br/>(Run the following programs in `bin` folder)||
 |:-:|:-:|:-:|
-|benchmark|`./multiswg_benchmark -a gap-affine-swg -i $file_name -o $answer_name`|benchmark will output alignment CIGAR result for testing other methods|
-|wfa-high|`./align_benchmark -a gap-affine-wfa --wfa-memory high -i $file_name -I $answer_name -c alignment --wfa-max-threads $cpus`||
-|wfa-med|`./align_benchmark -a gap-affine-wfa --wfa-memory med -i $file_name -I $answer_name -c alignment --wfa-max-threads $cpus`||
-|wfa-low|`./align_benchmark -a gap-affine-wfa --wfa-memory low -i $file_name -I $answer_name -c alignment --wfa-max-threads $cpus`||
-|wfa-ultra-low|`./align_benchmark -a gap-affine-wfa --wfa-memory ultralow -i $file_name -I $answer_name -c alignment --wfa-max-threads $cpus`||
+|benchmark (B)|`./multiswg_benchmark -a gap-affine-swg -i $file_name -o $answer_name`|benchmark will output alignment CIGAR result for testing other methods|
+|wfa-high (Wh)|`./align_benchmark -a gap-affine-wfa --wfa-memory high -i $file_name -I $answer_name -c alignment --wfa-max-threads $cpus`||
+|wfa-med (Wm)|`./align_benchmark -a gap-affine-wfa --wfa-memory med -i $file_name -I $answer_name -c alignment --wfa-max-threads $cpus`||
+|wfa-low (Wl)|`./align_benchmark -a gap-affine-wfa --wfa-memory low -i $file_name -I $answer_name -c alignment --wfa-max-threads $cpus`||
+|wfa-ultra-low (Wul)|`./align_benchmark -a gap-affine-wfa --wfa-memory ultralow -i $file_name -I $answer_name -c alignment --wfa-max-threads $cpus`||
+|hirschberg-raw (H1D1)|`./align_benchmark -a gap-affine-hirschberg -i $file_name -I $answer_name -c alignment`||
+|hirschberg-single (HTD1)|`./align_benchmark -a gap-affine-hirschberg-multi -i $file_name -I $answer_name -c alignment -E $cpus -D 1`||
+|hirschberg-multi (HTDT)|`./align_benchmark -a gap-affine-hirschberg-multi -i $file_name -I $answer_name -c alignment -E $cpus -D $dpcpus`|`$dpcpus` is same as `expr $cpus / 2`|
+|russians-multi-$t$ ($R_t$)|`./align_benchmark -a gap-affine-russians-multi -i $file_name -I $answer_name -c alignment -E $cpus -D $dpcpus -B $blocksize`|`$dpcpus` is same as `expr $cpus / 2`<br/>`$blocksize` is same as $t$|
 |swg-barrier|`./multiswg_benchmark -a gap-affine-swg-multithread -i $file_name -I $answer_name -B -c alignment -D $cpus`|use `-B` to align with barrier but only supported in `C++20` or newer|
 |swg-condition-variable|`./multiswg_benchmark -a gap-affine-swg-multithread -i $file_name -I $answer_name -c alignment -D $cpus`||
-|hirschberg-single|`./align_benchmark -a gap-affine-hirschberg-multi -i $file_name -I $answer_name -c alignment -E $cpus -D 1`||
-|hirschberg-multi|`./align_benchmark -a gap-affine-hirschberg-multi -i $file_name -I $answer_name -c alignment -E $cpus -D $dpcpus`|`$dpcpus` is same as `expr $cpus / 2`|
-|russians-multi-$t$|`./align_benchmark -a gap-affine-russians-multi -i $file_name -I $answer_name -c alignment -E $cpus -D $dpcpus -B $blocksize`|`$dpcpus` is same as `expr $cpus / 2`<br/>`$blocksize` is same as $t$|
 
 
 ## Test dataset and program

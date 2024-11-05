@@ -130,6 +130,7 @@ void usage() {
       "              gap-affine-swg                                            \n"
       "              gap-affine-swg-banded                                     \n"
       "              gap-affine-wfa                                            \n"
+      "              gap-affine-hirschberg                                     \n"
       "              gap-affine-hirschberg-multi                               \n"
       "              gap-affine-russians-multi                                 \n"
       "            [Gap-affine-2pieces (Concave 2-pieces)]                     \n"
@@ -286,6 +287,8 @@ void parse_arguments(
         parameters.algorithm = alignment_gap_affine2p_dp;
       } else if (strcmp(optarg,"gap-affine2p-wfa")==0) {
         parameters.algorithm = alignment_gap_affine2p_wavefront;
+      } else if (strcmp(optarg, "gap-affine-hirschberg") == 0) {
+        parameters.algorithm = alignment_hirschberg;
       } else if (strcmp(optarg, "gap-affine-hirschberg-multi") == 0) {
         parameters.algorithm = alignment_hirschberg_multi;
       } else if (strcmp(optarg, "gap-affine-russians-multi") == 0) {
