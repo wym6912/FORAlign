@@ -278,6 +278,8 @@ g++ -O3 library_example/swg.cpp -pthread -L./lib -lswg -o bin/swg_cpp_example -l
 
 ## Citation
 
+Wei, Y., Zhou, T., Zhai, Y., Yu, L., & Zou, Q. (2025). FORAlign: accelerating gap-affine DNA pairwise sequence alignment using FOR-blocks based on Four Russians approach with linear space complexity. Briefings in Bioinformatics, 26(1), bbaf061.
+
 ## Contacts
 
 If you find any bug, welcome to contact us on the [issues page](https://github.com/malabz/FORAlign/issues) or [email us](mailto:wym6912@outlook.com).
